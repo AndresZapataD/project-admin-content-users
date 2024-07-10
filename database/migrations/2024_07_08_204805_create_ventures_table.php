@@ -12,7 +12,7 @@ class CreateVenturesTable extends Migration
         Schema::create('ventures', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('entrepreneur_id');
-            $table->unsignedBigInteger('venture_category_id'); // Nueva columna para la clave foránea
+            $table->unsignedBigInteger('venture_category_id');
             $table->string('name');
             $table->text('description');
             $table->string('NIT');
@@ -22,7 +22,7 @@ class CreateVenturesTable extends Migration
             $table->timestamps();
 
             $table->foreign('entrepreneur_id')->references('id')->on('entrepreneurs')->onDelete('cascade');
-            $table->foreign('venture_category_id')->references('id')->on('venture_categories')->onDelete('cascade'); // Definición de la clave foránea
+            $table->foreign('venture_category_id')->references('id')->on('venture_categories')->onDelete('cascade');
         });
     }
 
