@@ -1,4 +1,5 @@
 <?php
+// database/migrations/2024_07_08_000002_create_ventures_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,6 +12,7 @@ class CreateVenturesTable extends Migration
         Schema::create('ventures', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('entrepreneur_id');
+            $table->unsignedBigInteger('venture_category_id'); // Nueva columna para la clave foránea
             $table->string('name');
             $table->text('description');
             $table->string('NIT');
@@ -20,6 +22,7 @@ class CreateVenturesTable extends Migration
             $table->timestamps();
 
             $table->foreign('entrepreneur_id')->references('id')->on('entrepreneurs')->onDelete('cascade');
+            $table->foreign('venture_category_id')->references('id')->on('venture_categories')->onDelete('cascade'); // Definición de la clave foránea
         });
     }
 
