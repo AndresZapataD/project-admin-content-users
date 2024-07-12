@@ -1,4 +1,5 @@
 <?php
+// database/migrations/2024_07_08_000006_create_venture_social_networks_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -25,3 +26,4 @@ class CreateVentureSocialNetworksTable extends Migration
         Schema::dropIfExists('venture_social_networks');
     }
 }
+

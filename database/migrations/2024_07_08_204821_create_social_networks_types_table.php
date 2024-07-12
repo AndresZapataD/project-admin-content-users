@@ -1,4 +1,5 @@
 <?php
+// database/migrations/2024_07_08_000007_create_social_networks_types_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

@@ -1,6 +1,5 @@
 <?php
-
-// database/migrations/2024_07_08_000001_create_venture_categories_table.php
+// database/migrations/2024_07_08_000004_create_venture_categories_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
