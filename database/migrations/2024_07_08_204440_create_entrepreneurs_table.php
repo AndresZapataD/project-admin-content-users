@@ -1,5 +1,4 @@
 <?php
-// database/migrations/2024_07_08_000002_create_entrepreneurs_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,9 +10,11 @@ class CreateEntrepreneursTable extends Migration
     {
         Schema::create('entrepreneurs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
             $table->enum('state', ['approved', 'pending', 'rejected']);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

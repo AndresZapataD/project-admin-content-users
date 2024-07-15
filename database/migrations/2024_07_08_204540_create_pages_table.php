@@ -1,5 +1,4 @@
 <?php
-// database/migrations/2024_07_08_000003_create_pages_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,11 +10,11 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable(); // Permitir valores nulos
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('url');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null'); // Cambiar a set null
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });
     }
 
