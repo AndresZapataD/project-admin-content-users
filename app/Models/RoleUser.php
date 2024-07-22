@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Section extends Model
+class RoleUser extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'page_id',
-        'sequence_number',
+        'role_id',
+        'user_id',
     ];
 
-    public function page()
+    public function user()
     {
-        return $this->belongsTo(Page::class);
+        return $this->belongsTo(User::class);
     }
 }
